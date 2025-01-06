@@ -9,7 +9,7 @@ export class CreateTaskDto {
   name: string;
 
   @IsNotEmpty()
-  @IsEnum(TaskPriority, { message: 'Priority must be Low, Medium, or High' })
+  @IsEnum(TaskPriority, { message: `Priority must be one of: ${Object.values(TaskPriority).join(', ')}` })
   priority: TaskPriority;
 
   @IsOptional()
